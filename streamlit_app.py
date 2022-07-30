@@ -28,5 +28,5 @@ if submit_button:
         )
 
 with st.sidebar.expander('Example URL'):
-	st.code('https://www.youtube.com/watch?v=_I2bxeQEa6Y')
+	st.code('https://www.youtube.com/watch?v=_I2bxeQEa6Y');
     st.code('https://www.youtube.com/watch?v=S0dSm_ClcSw')
