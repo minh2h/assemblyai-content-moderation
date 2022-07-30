@@ -13,14 +13,18 @@ api_key = st.secrets['api_key']
 # 2. Retrieving audio file from YouTube video
 def get_yt(inputURL):
     video = YouTube(inputURL)
-    author = video.author
     yt = video.streams.get_audio_only()
     yt.download()
+    
+    st.header('Video Information')
+    st.write('Name: ', video.title)
+    st.write('Channel: ', video.author)
+    st.write('Published Date: ', video.publish_date)
+    st.write('Thumbnail: ', video.thumbnail_url)
 
     st.info('2. Audio file has been retrieved from YouTube video')
     bar.progress(10)
-    
-    st.write('Author', author)
+
 
 # 3. Upload YouTube audio file to AssemblyAI
 def transcribe_yt():
