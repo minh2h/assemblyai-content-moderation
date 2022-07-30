@@ -1,8 +1,5 @@
-from matplotlib.image import thumbnail
 import streamlit as st
 import os
-from skimage import io
-import matplotlib.pyplot as plt
 from time import sleep
 import requests
 from pytube import YouTube
@@ -23,9 +20,10 @@ def get_yt(inputURL):
     st.write('Name: ', video.title)
     st.write('Channel: ', video.author)
     st.write('Published Date: ', video.publish_date)
-    thumbnail = io.imread(video.thumbnail_url)
-    plt.imshow(thumbnail)
-    plt.show()
+    st.write('Thumbnail: ', video.thumbnail_url)
+    # thumb = io.imread(url)
+    # plt.imshow(image)
+    # plt.show()
 
     st.info('2. Audio file has been retrieved from YouTube video')
     bar.progress(10)
